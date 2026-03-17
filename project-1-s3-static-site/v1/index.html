@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My AWS Website — CloudFront Edition</title>
+    <title>My First AWS Website</title>
     <style>
         * {
             margin: 0;
@@ -28,7 +28,7 @@
             border-radius: 20px;
             padding: 60px 40px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 650px;
+            max-width: 600px;
             width: 90%;
         }
 
@@ -57,16 +57,6 @@
             margin-bottom: 30px;
         }
 
-        .version-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 25px;
-            font-weight: bold;
-        }
-
         .info-box {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -90,22 +80,15 @@
             font-weight: bold;
         }
 
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 25px;
-        }
-
         .btn {
             display: inline-block;
-            padding: 14px 30px;
+            margin-top: 25px;
+            padding: 14px 40px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
             text-decoration: none;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -116,136 +99,44 @@
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-secondary {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .stat-box {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffd93d;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            color: #b8b8d4;
-            margin-top: 5px;
-        }
-
-        #message {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            min-height: 30px;
-        }
-
         .footer {
             margin-top: 30px;
             font-size: 0.85rem;
             color: #666;
         }
-
-        @media (max-width: 500px) {
-            .stats {
-                grid-template-columns: 1fr;
-            }
-            h1 {
-                font-size: 1.8rem;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="rocket">⚡</div>
-
-        <span class="version-badge">v2.0 — CloudFront Edition</span>
-
-        <h1>Hello from CloudFront! ⚡</h1>
-        <p class="subtitle">Now powered by AWS CloudFront CDN</p>
+        <div class="rocket">🚀</div>
+        <h1>Hello, I'm Pranav!</h1>
+        <p class="subtitle">This website is hosted on AWS S3</p>
 
         <div class="info-box">
-            <p><span class="label">☁️ Storage:</span> Amazon S3</p>
-            <p><span class="label">🚀 CDN:</span> Amazon CloudFront</p>
-            <p><span class="label">📍 Origin:</span> ap-south-1 (Mumbai)</p>
-            <p><span class="label">🌍 Delivery:</span> 400+ Edge Locations</p>
-            <p><span class="label">🔒 Protocol:</span> HTTPS Enabled</p>
-            <p><span class="label">📅 Day:</span> Day 2 of Cloud Journey</p>
+            <p><span class="label">☁️ Service:</span> Amazon S3</p>
+            <p><span class="label">📍 Region:</span> ap-south-1 (Mumbai)</p>
+            <p><span class="label">📅 Deployed:</span> Day 1 of Cloud Journey</p>
+            <p><span class="label">🎯 Type:</span> Static Website Hosting</p>
         </div>
 
-        <div class="stats">
-            <div class="stat-box">
-                <div class="stat-number">400+</div>
-                <div class="stat-label">Edge Locations</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">&lt;50ms</div>
-                <div class="stat-label">Latency</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Availability</div>
-            </div>
-        </div>
+        <button class="btn" onclick="celebrate()">Click to Celebrate! 🎉</button>
 
-        <div class="btn-group">
-            <button class="btn" onclick="celebrate()">Celebrate! 🎉</button>
-            <button class="btn btn-secondary" onclick="showInfo()">How It Works 🧠</button>
-        </div>
+        <div id="message" style="margin-top: 20px; font-size: 1.2rem;"></div>
 
-        <div id="message"></div>
-
-        <p class="footer">Built with ❤️ while learning AWS Cloud Engineering</p>
+        <p class="footer">Built with ❤️ while learning AWS</p>
     </div>
 
     <script>
         function celebrate() {
             const messages = [
-                "🎉 CloudFront CDN is live!",
-                "⚡ Content delivered at lightning speed!",
-                "🌍 Your site is now globally distributed!",
-                "🔒 HTTPS enabled automatically!",
-                "💪 Day 2 complete — you're growing fast!",
-                "🚀 From S3 to CloudFront — leveling up!"
+                "🎉 First AWS deployment complete!",
+                "☁️ Cloud Engineer in the making!",
+                "💪 Day 1 done, many more to go!",
+                "🔥 S3 hosting mastered!",
+                "⚡ You're unstoppable!"
             ];
             const random = messages[Math.floor(Math.random() * messages.length)];
             document.getElementById('message').textContent = random;
-        }
-
-        function showInfo() {
-            const steps = [
-                "1️⃣ You open the CloudFront URL",
-                "2️⃣ Request hits nearest Edge Location",
-                "3️⃣ Edge checks if content is cached",
-                "4️⃣ If cached → serves instantly",
-                "5️⃣ If not → fetches from S3 origin",
-                "6️⃣ Caches it for next request"
-            ];
-            let current = 0;
-            const msgEl = document.getElementById('message');
-
-            function showNext() {
-                if (current < steps.length) {
-                    msgEl.textContent = steps[current];
-                    current++;
-                    setTimeout(showNext, 1500);
-                } else {
-                    msgEl.textContent = "✅ That's how CloudFront works!";
-                }
-            }
-            showNext();
         }
     </script>
 </body>
