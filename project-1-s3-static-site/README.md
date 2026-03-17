@@ -1,18 +1,35 @@
 # 🌐 Static Website Hosting on AWS S3
 
-## 📌 Project Overview
-
-This project demonstrates how to host a static website using **Amazon S3**, a highly scalable object storage service from AWS. The website is publicly accessible via an S3 website endpoint.
-
-This is a foundational cloud project relevant for roles like **Cloud Support Engineer** and **DevOps Engineer**, focusing on storage, access control, and basic deployment.
+![AWS](https://img.shields.io/badge/AWS-S3-orange?logo=amazon-aws)
+![Status](https://img.shields.io/badge/Project-Beginner-green)
+![Cost](https://img.shields.io/badge/Cost-Free%20Tier-blue)
 
 ---
 
-## 🏗️ Architecture
+## 📌 Project Overview
 
-* Static website files (HTML, CSS) are stored in an S3 bucket
-* S3 serves the website using static hosting feature
-* Public access is enabled via bucket policy
+This project demonstrates how to deploy a **static website** using AWS S3 with public access configuration.
+
+It is designed as a **foundational cloud project** for:
+
+* Cloud Support Engineer roles
+* DevOps Engineer roles
+
+The project focuses on **storage, permissions, hosting, and debugging**, which are core real-world skills.
+
+---
+
+## 🏗️ Architecture Diagram (Simple)
+
+```
+User (Browser)
+      │
+      ▼
+S3 Bucket (Static Website Hosting)
+      │
+      ▼
+HTML / CSS Files (index.html)
+```
 
 ---
 
@@ -26,18 +43,25 @@ This is a foundational cloud project relevant for roles like **Cloud Support Eng
 
 ## 🚀 Deployment Steps
 
-### 1. Create an S3 Bucket
+### 1️⃣ Create an S3 Bucket
 
-* Navigate to S3 in AWS Console
-* Create a bucket with a globally unique name
-* Select region (e.g., ap-south-1)
-* Disable "Block all public access"
+* Go to AWS S3 Console
+* Create a bucket with a **globally unique name**
+* Select region (e.g., `ap-south-1`)
+* Disable **Block all public access**
 
-### 2. Upload Website Files
+---
 
-* Upload `index.html` (and other assets if any)
+### 2️⃣ Upload Website Files
 
-### 3. Enable Static Website Hosting
+Upload:
+
+* `index.html`
+* Optional: CSS, JS files
+
+---
+
+### 3️⃣ Enable Static Website Hosting
 
 * Go to **Properties**
 * Enable **Static Website Hosting**
@@ -45,9 +69,11 @@ This is a foundational cloud project relevant for roles like **Cloud Support Eng
 
   * Index document: `index.html`
 
-### 4. Configure Bucket Policy
+---
 
-Add the following policy to allow public read access:
+### 4️⃣ Configure Bucket Policy
+
+Allow public access using:
 
 ```json
 {
@@ -64,10 +90,14 @@ Add the following policy to allow public read access:
 }
 ```
 
-### 5. Access the Website
+---
 
-* Use the S3 website endpoint URL from the **Properties** tab
-* Example:
+### 5️⃣ Access the Website
+
+Use the endpoint from:
+**Properties → Static Website Hosting**
+
+Example:
 
 ```
 http://your-bucket-name.s3-website-region.amazonaws.com
@@ -75,51 +105,100 @@ http://your-bucket-name.s3-website-region.amazonaws.com
 
 ---
 
-## 🧪 Testing & Validation
+## 💰 Cost & Billing (IMPORTANT)
 
-* Verify website loads successfully
-* Check browser console for errors
-* Test incorrect configurations:
+### ✅ Free Tier (12 Months)
 
-  * Remove bucket policy → expect **403 Forbidden**
-  * Change index file name → expect **404 Not Found**
+* 5 GB storage → FREE
+* 20,000 GET requests → FREE
+* 2,000 PUT requests → FREE
 
----
+### 📊 Expected Cost for This Project
 
-## ⚠️ Common Issues & Fixes
-
-| Issue         | Cause              | Solution                     |
-| ------------- | ------------------ | ---------------------------- |
-| 403 Forbidden | No public access   | Update bucket policy         |
-| 404 Not Found | Missing index.html | Upload correct file          |
-| Access Denied | Permissions issue  | Check public access settings |
+| Usage                        | Cost              |
+| ---------------------------- | ----------------- |
+| Static website (low traffic) | ₹0                |
+| Moderate usage               | Few ₹             |
+| High traffic                 | Scales with usage |
 
 ---
 
-## 💡 Key Learnings
+### ⚠️ When Charges May Occur
 
-* Understanding of object storage (S3)
-* Static website hosting concepts
-* Access control using bucket policies
-* Debugging real-world cloud issues
+* High number of requests
+* Large data transfer
+* Additional AWS services
 
 ---
 
-## 📈 Future Improvements
+### 🔔 Best Practice (Must Do)
 
-* Integrate CDN using CloudFront
-* Add custom domain using Route 53
-* Enable HTTPS
-* Add monitoring using CloudWatch
+Set a billing alert:
+
+* Go to AWS Billing → Budgets
+* Create alert at `$1`
+
+---
+
+## 🧪 Testing & Debugging
+
+| Error         | Cause              | Fix                  |
+| ------------- | ------------------ | -------------------- |
+| 403 Forbidden | No public access   | Update bucket policy |
+| 404 Not Found | Missing index.html | Upload correct file  |
+| Access Denied | Permissions issue  | Check settings       |
+
+---
+
+## 🧠 Key Learnings
+
+* Object storage fundamentals
+* Static website hosting
+* Access control via bucket policies
+* Debugging cloud issues
+
+---
+
+## 🔒 Security Considerations
+
+* Avoid public access for sensitive data
+* Use IAM roles for production setups
+* Enable logging and monitoring in real projects
+
+---
+
+## 📈 Future Enhancements
+
+* Add CDN using CloudFront
+* Configure custom domain via Route 53
+* Enable HTTPS (SSL)
+* Add monitoring with CloudWatch
+
+---
+
+## 📁 Project Structure
+
+```
+project-root/
+│
+├── index.html
+├── README.md
+```
 
 ---
 
 ## 👨‍💻 Author
 
-Pranav Patil
+**Pranav Patil**
+
+---
+
+## ⭐ Resume Value
+
+> Deployed a static website using AWS S3 with public access configuration and implemented basic monitoring and troubleshooting.
 
 ---
 
 ## 📄 License
 
-This project is for educational purposes.
+This project is for educational purposes only.
