@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC2 + Nginx Server</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a, #1a1a3e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 650px;
+            width: 90%;
+        }
+        .icon { font-size: 60px; margin-bottom: 20px; }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00ff88, #00b4d8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle { color: #999; margin-bottom: 30px; font-size: 1.1rem; }
+        .info-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .info-box p {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .info-box p:last-child { border-bottom: none; }
+        .label { color: #00ff88; font-weight: bold; }
+        .btn {
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #00ff88, #00b4d8);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover { transform: translateY(-3px); }
+        #msg { margin-top: 15px; font-size: 1.1rem; min-height: 30px; }
+        .footer { margin-top: 30px; color: #555; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🖥️</div>
+        <h1>EC2 + Nginx Server</h1>
+        <p class="subtitle">Deployed on AWS EC2 with Nginx Web Server</p>
+        <div class="info-box">
+            <p><span class="label">☁️ Service:</span> Amazon EC2</p>
+            <p><span class="label">🐧 OS:</span> Ubuntu 22.04 LTS</p>
+            <p><span class="label">🌐 Web Server:</span> Nginx</p>
+            <p><span class="label">💻 Instance:</span> t2.micro</p>
+            <p><span class="label">📅 Project:</span> Project 2 - Day 3</p>
+        </div>
+        <button class="btn" onclick="celebrate()">Server is Live! 🎉</button>
+        <div id="msg"></div>
+        <p class="footer">Built with ❤️ while learning AWS</p>
+    </div>
+    <script>
+        function celebrate() {
+            const msgs = [
+                "🎉 Nginx is serving this page!",
+                "🖥️ EC2 instance running strong!",
+                "🐧 Ubuntu 22.04 under the hood!",
+                "💪 Project 2 complete!"
+            ];
+            document.getElementById('msg').textContent = msgs[Math.floor(Math.random() * msgs.length)];
+        }
+    </script>
+</body>
+</html>
