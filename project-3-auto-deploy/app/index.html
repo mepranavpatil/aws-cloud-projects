@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Deploy — Project 3</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a, #1a1a3e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 650px;
+            width: 90%;
+        }
+        .icon { font-size: 60px; margin-bottom: 20px; }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #f093fb, #f5576c, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle { color: #999; margin-bottom: 30px; font-size: 1.1rem; }
+        .info-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .info-box p {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .info-box p:last-child { border-bottom: none; }
+        .label { color: #f093fb; font-weight: bold; }
+        .flow-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            text-align: left;
+            line-height: 2;
+            color: #a8edea;
+        }
+        .btn {
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover { transform: translateY(-3px); }
+        #msg { margin-top: 15px; font-size: 1.1rem; min-height: 30px; }
+        .version { color: #555; margin-top: 20px; font-size: 0.8rem; }
+        .footer { margin-top: 20px; color: #555; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🚀</div>
+        <span class="badge">Project 3 — Auto Deploy</span>
+        <h1>DevOps Pipeline</h1>
+        <p class="subtitle">Code pushed to GitHub → Auto deployed to EC2</p>
+
+        <div class="info-box">
+            <p><span class="label">📦 Source:</span> GitHub Repository</p>
+            <p><span class="label">🖥️ Server:</span> AWS EC2 (Ubuntu)</p>
+            <p><span class="label">🌐 Web Server:</span> Nginx</p>
+            <p><span class="label">🔄 Deploy:</span> Automated via Script</p>
+            <p><span class="label">📅 Project:</span> Project 3 - Day 1</p>
+        </div>
+
+        <div class="flow-box">
+            Developer (You)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;↓ git push<br>
+            GitHub Repository<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;↓ git pull (on EC2)<br>
+            EC2 Server<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;↓ copy to /var/www/html/<br>
+            Nginx serves updated website
+        </div>
+
+        <button class="btn" onclick="celebrate()">Deployment Working! 🎉</button>
+        <div id="msg"></div>
+
+        <p class="version">Version: 1.0 — Initial Deploy</p>
+        <p class="footer">Built with ❤️ — DevOps Automation Project</p>
+    </div>
+    <script>
+        function celebrate() {
+            const msgs = [
+                "🎉 Auto deployment pipeline is live!",
+                "🚀 Push to GitHub → Website updates!",
+                "🔄 No more manual file copying!",
+                "💪 This is how real DevOps works!",
+                "⚡ CI/CD foundation established!"
+            ];
+            document.getElementById('msg').textContent = msgs[Math.floor(Math.random() * msgs.length)];
+        }
+    </script>
+</body>
+</html>
