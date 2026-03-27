@@ -208,5 +208,6 @@ Day 1	Git + EC2 + Deployment Flow	✅ Completed
 Day 2	Automation Script	⏳ Pending
 Day 3	Auto Trigger (Cron/Webhook)	⏳ Pending
 📌 Conclusion
+This project establishes a complete CI/CD foundation by connecting development, version control, and deployment environments. Starting from manual 4-command deployments, we automated the process down to zero commands using Bash scripting and Cron scheduling.
 
-This project establishes the foundation of a DevOps pipeline by connecting development, version control, and deployment environments. It highlights the transition from manual deployments to automated systems.
+This mirrors production deployment pipelines: Push → Pull → Deploy → Serve.
