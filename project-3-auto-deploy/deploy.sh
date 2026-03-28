@@ -3,7 +3,7 @@
 echo "🚀 Starting Deployment..."
 
 # Step 1: Go to project directory
-cd /home/ubuntu/devops-auto-deploy || exit
+cd /home/ubuntu/cloud/aws-cloud-projects/project-3-auto-deploy || exit
 
 # Step 2: Pull latest code
 echo "📥 Pulling latest code from GitHub..."
